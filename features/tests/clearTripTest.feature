@@ -15,7 +15,7 @@ Feature: Clear Trip
 
     Scenario: Verify hotels search results page
       When I click on "Hotels" link on page
-      And I enter hotel location as "Chennai"
+      And I enter hotel location as "Indiranagar"
       And I enter "Hotel Checkin" travel date
       And I enter "Hotel Checkout" travel date
       And I click on "Search Hotels" button

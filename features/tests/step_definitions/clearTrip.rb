@@ -9,11 +9,11 @@ end
 
 When(/^I enter source city "([^"]*)" and destination city "([^"]*)"$/) do |source, destination|
   $Browser.home_page.source_city.set source
-  $Function.waitFor(2)
-  step 'I press the enter key'
+  source = 1
+  GlobalFunctions.dropDownExist(source)
   $Browser.home_page.destination_city.set destination
-  $Function.waitFor(2)
-  step 'I press the enter key'
+  destination = 2
+  GlobalFunctions.dropDownExist(destination)
 end
 
 And(/^I enter "([^"]*)" travel date$/) do |choice|
@@ -27,7 +27,7 @@ And(/^I enter "([^"]*)" travel date$/) do |choice|
   else
     raise "Invalid option passed"
   end
-  $Function.waitFor(1)
+  GlobalFunctions.waitFor(1)
   page.driver.browser.action.send_keys(:down).perform
   step 'I press the enter key'
 end
@@ -42,7 +42,7 @@ end
 
 When(/^I enter hotel location as "([^"]*)"$/) do |destination|
   $Browser.home_page.hotel_location.set destination
-  $Function.waitFor(1.5)
+  GlobalFunctions.waitFor(3)
   step 'I press the enter key'
 end
 
@@ -51,7 +51,7 @@ And(/^I click on "Your trip" menu item$/) do
 end
 
 And(/^I see the signIn content frame$/) do
-  $Function.waitFor(3)
+  GlobalFunctions.waitFor(3)
   page.driver.browser.switch_to.frame "modal_window"
   expect(page).to have_css(".#{$Browser.home_page.signin_content['class']}")
 end

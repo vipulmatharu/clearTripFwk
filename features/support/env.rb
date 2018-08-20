@@ -39,7 +39,6 @@ Dir["test_site/pages/*.rb"].sort.each { |file| load file }
 Dir["features/lib/*.rb"].sort.each { |file| load file }
 
 $Browser = TestSite.new
-$Function = GlobalFunctions.new
 
 Selenium::WebDriver::Chrome.driver_path="#{Dir.pwd}/chromedriver.exe"
 

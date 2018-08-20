@@ -3,6 +3,7 @@
 Steps to execute the Test
 
 - Install Ruby
+- gem install bundler --source http://rubygems.org
 - bundle Install
 - cucumber -t tagname browser=chrome/firefox
 
@@ -22,4 +23,4 @@ Gems annd its uses:
 
 Reports:
   Tests executed on chrome browser. Find Result in clearTrip_chrome.html report.
-  Tests executed on firefox browser. Find Result in clearTrip_firefox.html report
+  Same repor we can generate for Firefox browser.
